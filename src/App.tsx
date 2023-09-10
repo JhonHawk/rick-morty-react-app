@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import CardMotion, {CharacterProps} from "./components/Card.tsx";
+import CardMotion from "./components/Card.tsx";
+import { CharacterProps } from "./core/interfaces/characters.ts";
 
 export default function App() {
     const [state, setState] = useState<CharacterProps[]>([]);
@@ -16,7 +17,7 @@ export default function App() {
     }, []);
 
     return (
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid p-4 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-2  sm:grid-cols-1 gap-4">
             {state.map((item) => (
                 <CardMotion key={item.id} character={item} />
             ))}
